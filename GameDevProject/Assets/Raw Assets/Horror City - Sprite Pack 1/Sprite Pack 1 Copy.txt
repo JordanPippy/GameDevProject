@@ -1,0 +1,20 @@
+ Add some cute, grungey character to your horror games with the Horror City Sprite Pack #1! This sprite pack includes various characters, facesets, zombies, vehicles and more, lovingly created in my POP! graphic style. Featuring classic Survival Horror inspired designs for a throwback 90s vibe!
+
+Each of the 16 unique characters in this set features:
+
+    A full four-directional walking sprite
+    An eight expression faceset sheet
+    Downed/Dead pose - with and without blood and injury detail
+    A full four-directional walking zombie version - with and without blood and injury detail
+    One zombie face graphic - with and without blood and injury detail
+    One alternate colour version of all the above
+
+Arranged in both 16x16 and 'plug and play' 32x32 RPG Maker VX Ace versions for ease of use. Also included are base sprites in various skin-tones and body shapes allowing for the creation of your own heroes and heroines - or perhaps you'd rather just make more undead hordes? The choice is yours!
+
+Survivors, zombies, vehicles, power-ups and more - bring your horror games to life and undeath with these adorably disturbing horror sprites!
+
+Now includes 48x48 RPG Maker MV versions at no extra cost!
+
+As is the case with all of my asset packs available on itch, this pack is Royalty Free and usable in any engine without limitation - all I ask is that if you have  credits, to please pop my handle [VexedEnigma/PixelJustice] or name [D Machin] in there!
+
+Please note: Some of the graphics contained in this pack have previously been made available as part of my POP! Horror City graphic packs for RPG Maker, available on Steam and via the official RPG Maker Web store - however, this is the first time these graphics are available as part of a Non-RPG Maker license, allowing them to be used in any game creation engine you like!
