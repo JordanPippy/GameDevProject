@@ -33,7 +33,7 @@ public class AbilityController : MonoBehaviour
         if (mousePos.x > transform.position.x)
             angle += 180;
             
-        spell = Instantiate(ability.prefab, mousePos, Quaternion.Euler(0, 0, angle));
+        spell = Instantiate(ability.prefab, transform.position, Quaternion.Euler(0, 0, angle));
         Destroy(spell, 5);
 
         spell.GetComponent<Rigidbody2D>().AddForce(VectorFromAngle(angle * Mathf.Deg2Rad) * -500.0f);
