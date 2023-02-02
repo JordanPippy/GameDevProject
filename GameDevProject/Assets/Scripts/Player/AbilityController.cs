@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AbilityController : MonoBehaviour
 {
-    public GameObject ability;
+    public GameObject spell;
     private List<AbilityBase> abilities = new List<AbilityBase>();
     private List<GameObject> spawnedObjects = new List<GameObject>();
 
@@ -25,7 +25,6 @@ public class AbilityController : MonoBehaviour
 
     private void CastAbility()
     {
-        GameObject spell;
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
 
@@ -33,8 +32,8 @@ public class AbilityController : MonoBehaviour
         if (mousePos.x > transform.position.x)
             angle += 180;
             
-        spell = Instantiate(ability, transform.position, Quaternion.Euler(0, 0, angle));
-        Destroy(spell, 5);
+        //spell = Instantiate(ability, transform.position, Quaternion.Euler(0, 0, angle));
+        spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle));
 
         //spell.GetComponent<Rigidbody2D>().AddForce(Library.VectorFromAngle(angle * Mathf.Deg2Rad) * -500.0f);
     }
