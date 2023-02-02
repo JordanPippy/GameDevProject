@@ -14,4 +14,10 @@ public class AbilityBase : ScriptableObject
     {
         Debug.Log("Called Use from scriptableObject");
     }
+
+    public void Spawn(Vector3 position, Quaternion rotation)
+    {
+        GameObject clone = Instantiate(prefab, position, rotation);
+        Destroy(clone, 5);
+    }
 }

@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9381e4aec008f9b4f85fd27cd941b026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 4727960746900162411, guid: a7fbd2073056d79488f92a4bc87ec3fe, type: 3}
+  spell: {fileID: 4727960746900162411, guid: a7fbd2073056d79488f92a4bc87ec3fe, type: 3}
 --- !u!61 &870875998
 BoxCollider2D:
   m_ObjectHideFlags: 0
