@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AbilityController : MonoBehaviour
 {
-    public Ability ability;
-    private List<Ability> abilities = new List<Ability>();
+    public GameObject ability;
+    private List<AbilityBase> abilities = new List<AbilityBase>();
     private List<GameObject> spawnedObjects = new List<GameObject>();
 
     // Start is called before the first frame update
@@ -33,9 +33,9 @@ public class AbilityController : MonoBehaviour
         if (mousePos.x > transform.position.x)
             angle += 180;
             
-        spell = Instantiate(ability.prefab, transform.position, Quaternion.Euler(0, 0, angle));
+        spell = Instantiate(ability, transform.position, Quaternion.Euler(0, 0, angle));
         Destroy(spell, 5);
 
-        spell.GetComponent<Rigidbody2D>().AddForce(Library.VectorFromAngle(angle * Mathf.Deg2Rad) * -500.0f);
+        //spell.GetComponent<Rigidbody2D>().AddForce(Library.VectorFromAngle(angle * Mathf.Deg2Rad) * -500.0f);
     }
 }
