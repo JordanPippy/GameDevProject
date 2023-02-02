@@ -11,6 +11,10 @@ public static class Library
 
     public static float MousePlayerAngle(Vector3 mouse, Vector3 player)
     {
-        return Mathf.Atan((mouse.y - player.y) / (mouse.x - player.x)) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan((mouse.y - player.y) / (mouse.x - player.x)) * Mathf.Rad2Deg;
+        if(mouse.x > player.x){
+            angle += 180;
+        }
+        return angle;
     }
 }

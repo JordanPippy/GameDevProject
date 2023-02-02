@@ -26,11 +26,8 @@ public class AbilityController : MonoBehaviour
     private void CastAbility()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
 
         float angle = Library.MousePlayerAngle(mousePos, transform.position);
-        if (mousePos.x > transform.position.x)
-            angle += 180;
             
         //spell = Instantiate(ability, transform.position, Quaternion.Euler(0, 0, angle));
         spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle));
