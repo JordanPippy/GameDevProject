@@ -11,7 +11,7 @@ public class Ability : MonoBehaviour
     void Start()
     {
         Vector2 angleVector = -Library.VectorFromAngle(transform.rotation.eulerAngles.z * Mathf.Deg2Rad);
-        movement = (new Vector3(angleVector.x, angleVector.y, 0) - transform.position).normalized;
+        movement = (new Vector3(angleVector.x, angleVector.y, 0)).normalized;
         transform.position += movement;
     }
 

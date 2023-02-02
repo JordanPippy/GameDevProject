@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -424269435046983516}
   - component: {fileID: 1233153674244519264}
   m_Layer: 0
-  m_Name: Spell1
+  m_Name: plasma_bolt_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
