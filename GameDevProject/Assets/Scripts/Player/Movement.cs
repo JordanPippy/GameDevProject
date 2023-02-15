@@ -6,7 +6,6 @@ public class Movement : MonoBehaviour
 {
     // Public Variables
     public float moveSpeed;
-    public Rigidbody2D rb;
 
     // Private Variables
     private float horizontal, vertical;
@@ -34,7 +33,7 @@ public class Movement : MonoBehaviour
     {
         Vector3 movement = new Vector3(horizontal, vertical, 0).normalized;
 
-        rb.MovePosition(transform.position + (movement * moveSpeed * Time.deltaTime));
+        transform.position += (movement * moveSpeed * Time.deltaTime);
 
     }
 }

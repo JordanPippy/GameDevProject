@@ -5,8 +5,6 @@ using UnityEngine;
 public class AbilityController : MonoBehaviour
 {
     public GameObject spell;
-    private List<AbilityBase> abilities = new List<AbilityBase>();
-    private List<GameObject> spawnedObjects = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +27,7 @@ public class AbilityController : MonoBehaviour
 
         float angle = Library.MousePlayerAngle(mousePos, transform.position);
             
-        //spell = Instantiate(ability, transform.position, Quaternion.Euler(0, 0, angle));
         spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle));
 
-        //spell.GetComponent<Rigidbody2D>().AddForce(Library.VectorFromAngle(angle * Mathf.Deg2Rad) * -500.0f);
     }
 }
