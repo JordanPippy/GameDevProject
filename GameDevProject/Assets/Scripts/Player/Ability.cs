@@ -6,7 +6,7 @@ public class Ability : MonoBehaviour
 {
     public AbilityBase ability;
     public float speed = 1.0f;
-    public Vector3 movement;
+    private Vector3 movement;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class Ability : MonoBehaviour
         transform.position += (movement * speed * Time.deltaTime);
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("OnCollisionEnter2D");
         ability.Use(col.gameObject);

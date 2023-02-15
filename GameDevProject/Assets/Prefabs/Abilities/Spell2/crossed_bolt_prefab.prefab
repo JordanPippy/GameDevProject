@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -424269435046983516}
   - component: {fileID: 1233153674244519264}
   m_Layer: 0
-  m_Name: plasma_bolt_prefab
+  m_Name: crossed_bolt_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ Animator:
   m_GameObject: {fileID: 4727960746900162411}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2216a07adddae4cf792492157b6ffa0e, type: 2}
+  m_Controller: {fileID: 9100000, guid: b8b2754bc9c5344a890bf68bb8a04200, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -96,7 +96,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9687b8cba872c4f50aeb3b2b3ff1a0b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bafe9d8b38ab4bf9ba9db099e4d7156, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347938a1ccbe1394f9292f119c693041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: ba31f347a83c34548888dd90bee43bfb, type: 2}
+  ability: {fileID: 11400000, guid: 2978b7e920cedd34ca737e8f90c11306, type: 2}
   speed: 10
 --- !u!61 &1233153674244519264
 BoxCollider2D:
@@ -138,7 +138,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.32}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 0.48, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -17,4 +17,21 @@ public static class Library
         }
         return angle;
     }
+
+    public static float RandomWithinRange(float offest, float range)
+    {
+        return Random.Range(offest - range, offest + range);
+    }
+
+    public static void StandardDamage(GameObject other, int damage)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerController>().TakeDamage(damage);
+        }
+        else if (other.CompareTag("Enemy"))
+        {
+            other.GetComponent<EnemyController>().TakeDamage(damage);
+        }
+    }
 }
