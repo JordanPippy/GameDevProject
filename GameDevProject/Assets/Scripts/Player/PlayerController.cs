@@ -14,11 +14,16 @@ public class PlayerController : MonoBehaviour
     // Private Variables
     private float horizontal, vertical;
 
+    private Rigidbody2D rb2D;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        rb2D = gameObject.GetComponent<Rigidbody2D>();
+        rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -41,9 +46,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(horizontal, vertical, 0).normalized;
+        Vector2 movement = new Vector2(horizontal, vertical).normalized;
 
-        transform.position += (movement * speed * Time.deltaTime);
+        rb2D.position += (movement * speed * Time.deltaTime);
 
     }
 
