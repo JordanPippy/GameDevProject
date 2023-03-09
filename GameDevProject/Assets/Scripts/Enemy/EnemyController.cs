@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     private Vector2 targetPosition;
 
     private float time = 0.0f;
-    private float abilityTime = 5.0f;
+    private float abilityTime = 2.0f;
 
     private Rigidbody2D rb2D;
     private BoxCollider2D bc2D;
@@ -46,20 +46,17 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (Vector3.Distance(transform.position, targetPosition) >= 0.001f)
-        {
-            rb2D.MovePosition(Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime));
-        }
-        else
-        {
-            SetNewTargetPosition();
-        }
-
 
         if (time >= abilityTime)
         {
             time -= abilityTime;
             AttackPlayer();
+            //SetNewTargetPosition();
+        }
+
+        if (Input.GetKeyDown("a"))
+        {
+            SetNewTargetPosition();
         }
     }
 
@@ -77,6 +74,18 @@ public class EnemyController : MonoBehaviour
         spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle));
     }
 
+    public void FixedUpdate()
+    {
+        if (Vector3.Distance(rb2D.position, targetPosition) >= 0.1f)
+        {
+            rb2D.MovePosition(Vector3.MoveTowards(rb2D.position, targetPosition, speed * Time.deltaTime));
+        }
+        else
+        {
+            SetNewTargetPosition();
+        }
+    }
+
     private void SetNewTargetPosition()
     {
         bool found_valid_pos = false;
@@ -86,18 +95,22 @@ public class EnemyController : MonoBehaviour
         {
             iters += 1;
 
-            if (iters > 1000) {
+            if (iters > 100) {
                 print("could not find");
+                //targetPosition = new Vector2(rb2D.position.x, rb2D.position.y-10);
                 break;
             }
+            
             found_valid_pos = true;
 
             targetPosition = new Vector2(
-                Random.Range(rb2D.position.x-10, rb2D.position.x+10), 
-                Random.Range(rb2D.position.y-10, rb2D.position.y+10)
+                Random.Range(rb2D.position.x-5, rb2D.position.x+5), 
+                Random.Range(rb2D.position.y-5, rb2D.position.y+5)
             );
 
-            // targetPosition = new Vector2(-7f, -7f);
+            //targetPosition = new Vector2(rb2D.position.x, rb2D.position.y+10);
+
+            //targetPosition = new Vector2(-8f, -2f);
 
             // print(targetPosition);
 
@@ -107,15 +120,56 @@ public class EnemyController : MonoBehaviour
                 Vector2.Distance(rb2D.position, targetPosition)
             );
 
-            //Debug.DrawRay(rb2D.position, (targetPosition - rb2D.position).normalized, Color.red, 10, false);
-            Debug.DrawLine(rb2D.position, targetPosition, Color.red, 10, false);
+            //Debug.DrawRay(rb2D.position, (targetPosition - rb2D.position).normalized, Color.red, 10, false);s
 
             for (int j = 0; j < hits.Length; j++) {
                 if (hits[j].collider != bc2D && hits[j].collider != null) {
-                    print(hits[j].transform.name);
                     found_valid_pos = false;
+                    Debug.DrawLine(rb2D.position, targetPosition, Color.red, 10, false);
                     break;
                 }
+            }
+
+            //if the position is still valid, check if the route is wide enough
+            if (found_valid_pos) 
+            {
+                Vector2 offset = new Vector2(0f, 0f);
+                Vector2 step = (targetPosition - rb2D.position).normalized * 0.35f;
+
+                while (Vector2.Distance(rb2D.position+offset, targetPosition) > 0.7f) {
+                    Collider2D result = Physics2D.OverlapCircle(rb2D.position+offset, 0.1f);
+                    
+                    if (result != bc2D && result != null) {
+                        print("too small");
+                        print(result.transform.name);
+                        found_valid_pos = false;
+                        //Debug.DrawRay(rb2D.position, rb2D.position+offset, Color.blue, 10);
+                        Debug.DrawLine(rb2D.position, rb2D.position+offset, Color.blue, 10, false);
+                        break;
+                    }
+
+                    //print(rb2D.position+offset);
+                    //print(rb2D.position);
+                    //print(offset);
+
+                    offset += step;
+                    //print(offset);
+                    //print(step);
+                }
+            }
+
+            if (found_valid_pos)
+            {
+                if (Physics2D.OverlapCircle(new Vector2(targetPosition.x, targetPosition.y - 0.7f), 0.875f/2f) != null) {
+                    print("Occupied");
+                    found_valid_pos = false;
+                }
+
+                if (Physics2D.OverlapCircle(new Vector2(targetPosition.x, targetPosition.y + 0.7f), 0.875f/2f) != null) {
+                    print("Occupied");
+                    found_valid_pos = false;
+                }
+
             }
         }
     }
