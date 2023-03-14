@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void BehaviourDelegate();
-
-public class EnemyController : MonoBehaviour
+public class CrabController : MonoBehaviour
 {
     public float health = 10;
     public float speed = 1;
 
     public GameObject spell;
-    public GameObject player;
+    private GameObject player;
 
     private Vector2 targetPosition;
 
@@ -34,7 +32,7 @@ public class EnemyController : MonoBehaviour
             player = GameObject.Find("Player");
         }
 
-        behaviour = new BehaviourDelegate(MoveRandomPosition);
+        behaviour = new BehaviourDelegate(ChasePlayer);
         behaviour();
     }
 
@@ -54,7 +52,7 @@ public class EnemyController : MonoBehaviour
         if (time >= abilityTime)
         {
             time -= abilityTime;
-            AttackPlayer();
+            //AttackPlayer();
         }
     }
 
@@ -65,12 +63,13 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void AttackPlayer()
-    {
-        float angle = Library.MousePlayerAngle(player.transform.position, transform.position);
+    //TODO: make a short range melee spell and use that instead of damaging player via collision2d
+    // private void AttackPlayer()
+    // {
+    //     float angle = Library.MousePlayerAngle(player.transform.position, transform.position);
             
-        spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle));
-    }
+    //     spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle));
+    // }
 
     public void FixedUpdate()
     {
@@ -151,7 +150,8 @@ public class EnemyController : MonoBehaviour
 
         if (Vector2.Distance(rb2D.position, playerRB.position) > 4)
         {
-            targetPosition = playerRB.position - (playerDir * 1.5f);
+            targetPosition = playerRB.position - (playerDir * 2f);
+            Debug.DrawLine(rb2D.position, targetPosition, Color.blue, 10, false);
 
             if (!isValidPos(targetPosition))
             {
@@ -226,5 +226,14 @@ public class EnemyController : MonoBehaviour
         }
 
         return is_valid_pos;
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject == player)
+        {
+            MoveRandomPosition();
+            player.GetComponent<PlayerController>().TakeDamage(3);
+        }
     }
 }
