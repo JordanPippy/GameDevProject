@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     // Private Variables
     private float horizontal, vertical;
+    private Rigidbody2D rb2D;
 
     private Rigidbody2D rb2D;
 
@@ -22,7 +24,6 @@ public class PlayerController : MonoBehaviour
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        
         DontDestroyOnLoad(gameObject);
     }
 
@@ -47,9 +48,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 movement = new Vector2(horizontal, vertical).normalized;
-
         rb2D.position += (movement * speed * Time.deltaTime);
-
     }
 
     private void CastAbility()
@@ -65,8 +64,25 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        if (health <= 0)
+        if (health <= 0){
             Destroy(gameObject);
+            // Go back to main menu
+            SceneManager.LoadScene(0);
+            // Delete all persistent player data
+        }
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.buildIndex==1){
+            // Load level 1 position
+        }else if(scene.buildIndex==2){
+            // Load level 2 position
+        }else if(scene.buildIndex==3){
+            // Load level 3 position
+        }else if(scene.buildIndex==4){
+            // Load level 4 position
+        }
     }
 
     private void DetectMindSwap()
