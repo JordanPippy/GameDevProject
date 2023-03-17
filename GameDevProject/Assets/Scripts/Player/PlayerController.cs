@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
         uiUpdater.UpdateAbilityUI(spell.GetComponent<Ability>().ability.UIicon);
         maxHealth = health;
         healthBar.SetMaxHealth(maxHealth);
+        uiUpdater.SetAbilityCooldown(spellCooldown);
+        uiUpdater.SetMindswapCooldown(mindSwapCooldown);
+
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(GameObject.Find("Canvas"));
     }
@@ -79,7 +82,7 @@ public class PlayerController : MonoBehaviour
             
         spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle));
 
-        uiUpdater.abilityCooldown();
+        uiUpdater.AbilityCooldown();
 
     }
 
@@ -110,7 +113,9 @@ public class PlayerController : MonoBehaviour
                 mindSwapTimer = 0f;
                 ((MindSwap)mindSwap.GetComponent<Ability>().ability).Spawn(hit.collider.gameObject);
                 uiUpdater.UpdateAbilityUI(spell.GetComponent<SpriteRenderer>().sprite);
-                uiUpdater.mindswapCooldown();
+                uiUpdater.MindswapCooldown();
+                spellCooldown = spell.GetComponent<Ability>().ability.cooldown;
+                uiUpdater.SetAbilityCooldown(spellCooldown);
                 healthBar.SetMaxHealth(maxHealth);
                 healthBar.SetHealth(health);
             }
