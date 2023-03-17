@@ -31,7 +31,7 @@ public static class Library
         }
         else if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyController>().TakeDamage(damage);
+            other.GetComponent<GenericAIController>().TakeDamage(damage);
         }
     }
 }

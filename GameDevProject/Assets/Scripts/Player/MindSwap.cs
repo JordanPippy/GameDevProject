@@ -31,8 +31,8 @@ public class MindSwap : AbilityBase
         player.maxHealth = enemy.maxHealth;
         enemy.health = tempMaxHealth;
 
-        float tempSpeed = player.speed;
-        player.speed = enemy.speed;
+        float tempSpeed = player.speed - player.playerSpeedBonus;
+        player.speed = enemy.speed + player.playerSpeedBonus;
         enemy.speed = tempSpeed;
 
         tempSpell = player.spell;
@@ -42,6 +42,10 @@ public class MindSwap : AbilityBase
         Vector2 tempCollider = player.GetComponent<BoxCollider2D>().size;
         player.GetComponent<BoxCollider2D>().size = enemy.GetComponent<BoxCollider2D>().size;
         enemy.GetComponent<BoxCollider2D>().size = tempCollider;
+        
+        Vector2 tempColliderOffset = player.GetComponent<BoxCollider2D>().offset;
+        player.GetComponent<BoxCollider2D>().offset = enemy.GetComponent<BoxCollider2D>().offset;
+        enemy.GetComponent<BoxCollider2D>().offset = tempCollider;
         
     }
 

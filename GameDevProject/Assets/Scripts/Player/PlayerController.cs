@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     // Public Variables
     public float speed = 10;
+    public float playerSpeedBonus = 5;
     public GameObject spell;
     public GameObject mindSwap;
     public int health = 20;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
         uiUpdater = GetComponent<UIUpdater>();
         uiUpdater.UpdateAbilityUI(spell.GetComponent<Ability>().ability.UIicon);
         maxHealth = health;
+        speed += playerSpeedBonus;
         healthBar.SetMaxHealth(maxHealth);
         uiUpdater.SetAbilityCooldown(spellCooldown);
         uiUpdater.SetMindswapCooldown(mindSwapCooldown);
