@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Crossed Bolt
   damage: 5
-  cooldown: 0.6
+  cooldown: 2
   prefab: {fileID: 4727960746900162411, guid: 221ce4497c767c9488b38f3192d0ec86, type: 3}
