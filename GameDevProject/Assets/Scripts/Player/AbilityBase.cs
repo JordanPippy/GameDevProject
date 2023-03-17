@@ -8,6 +8,7 @@ public abstract class AbilityBase : ScriptableObject
     public int damage;
     public float cooldown;
     public GameObject prefab;
+    public Sprite UIicon;
 
     public abstract void Use(GameObject other);
 

@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         uiUpdater = GetComponent<UIUpdater>();
-        uiUpdater.UpdateAbilityUI(spell.GetComponent<SpriteRenderer>().sprite);
+        uiUpdater.UpdateAbilityUI(spell.GetComponent<Ability>().ability.UIicon);
         maxHealth = health;
         healthBar.SetMaxHealth(maxHealth);
         DontDestroyOnLoad(gameObject);
