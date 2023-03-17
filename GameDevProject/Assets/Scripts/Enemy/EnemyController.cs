@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class EnemyController : GenericAIController
 {
+    public int health = 10;
+    public int maxHealth;
+    public float speed = 1;
+
+    public GameObject spell;
+    public GameObject player;
+
     private Vector2 targetPosition;
 
     private float time = 0.0f;
@@ -14,6 +21,19 @@ public class EnemyController : GenericAIController
     {
         AIStart();
         targetPosition = MoveRandomPosition(5);
+
+        rb2D = gameObject.GetComponent<Rigidbody2D>();
+        bc2D = gameObject.GetComponent<BoxCollider2D>();
+        rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        maxHealth = health;
+
+        if (player == null)
+        {
+            player = GameObject.Find("Player");
+        }
+
+        behaviour = new BehaviourDelegate(MoveRandomPosition);
+        behaviour();
     }
 
     // Update is called once per frame
