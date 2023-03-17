@@ -6,7 +6,7 @@ public abstract class AbilityBase : ScriptableObject
 {
     public string title;
     public int damage;
-    public int cost;
+    public float cooldown;
     public GameObject prefab;
     public Sprite UIicon;
 

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Mind Swap
   damage: 0
-  cost: 0
+  cooldown: 10
   prefab: {fileID: 4727960746900162411, guid: 00b4165ee2a1bf747a69c92876b1d07c, type: 3}

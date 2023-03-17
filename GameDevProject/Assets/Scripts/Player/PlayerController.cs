@@ -11,21 +11,31 @@ public class PlayerController : MonoBehaviour
     public GameObject spell;
     public GameObject mindSwap;
     public int health = 20;
+    public int maxHealth;
     public HealthBar healthBar;
 
     // Private Variables
     private float horizontal, vertical;
+    private float spellCooldown, mindSwapCooldown;
+    private float spellTimer, mindSwapTimer;
     private Rigidbody2D rb2D;
     private UIUpdater uiUpdater;
 
     // Start is called before the first frame update
     void Start()
     {
+        AbilityBase spellbase = spell.GetComponent<Ability>().ability;
+        AbilityBase swapbase = mindSwap.GetComponent<Ability>().ability;
+        spellCooldown = spellbase.cooldown;
+        mindSwapCooldown = swapbase.cooldown;
+        spellTimer = spellbase.cooldown;
+        mindSwapTimer = swapbase.cooldown;
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         uiUpdater = GetComponent<UIUpdater>();
         uiUpdater.UpdateAbilityUI(spell.GetComponent<Ability>().ability.UIicon);
-        healthBar.SetMaxHealth(health);
+        maxHealth = health;
+        healthBar.SetMaxHealth(maxHealth);
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(GameObject.Find("Canvas"));
     }
@@ -33,18 +43,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (spellTimer < spellCooldown) {
+            spellTimer +=  Time.deltaTime;
+        }
+        if (mindSwapTimer < mindSwapCooldown) {
+            mindSwapTimer +=  Time.deltaTime;
+        }
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && spellTimer >= spellCooldown)
         {
+            spellTimer = 0f;
             CastAbility();
         }
 
-        
-        if (Input.GetMouseButtonDown(0)) 
+        // Don't even try to swap if we're on cooldown
+        if (Input.GetMouseButtonDown(0) && mindSwapTimer >= mindSwapCooldown) 
         {  
-            DetectMindSwap(); 
+            DetectMindSwap();
         }  
     }  
 
@@ -78,6 +95,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     private void DetectMindSwap()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -88,10 +106,12 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("Enemy"))
             {
+                // Only put mindswap on cooldown when successful
+                mindSwapTimer = 0f;
                 ((MindSwap)mindSwap.GetComponent<Ability>().ability).Spawn(hit.collider.gameObject);
                 uiUpdater.UpdateAbilityUI(spell.GetComponent<SpriteRenderer>().sprite);
                 uiUpdater.mindswapCooldown();
-                healthBar.SetMaxHealth(health);
+                healthBar.SetMaxHealth(maxHealth);
                 healthBar.SetHealth(health);
             }
         }
