@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private float spellCooldown, mindSwapCooldown;
     private float spellTimer, mindSwapTimer;
     private Rigidbody2D rb2D;
+
     private UIUpdater uiUpdater;
 
     // Start is called before the first frame update
