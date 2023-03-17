@@ -10,17 +10,22 @@ public class PlayerController : MonoBehaviour
     public float speed = 10;
     public GameObject spell;
     public GameObject mindSwap;
-    public float health = 20;
+    public int health = 20;
+    public HealthBar healthBar;
 
     // Private Variables
     private float horizontal, vertical;
     private Rigidbody2D rb2D;
+    private UIUpdater uiUpdater;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        uiUpdater = GetComponent<UIUpdater>();
+        uiUpdater.UpdateAbilityUI(spell.GetComponent<SpriteRenderer>().sprite);
+        healthBar.SetMaxHealth(health);
         DontDestroyOnLoad(gameObject);
     }
 
@@ -56,11 +61,14 @@ public class PlayerController : MonoBehaviour
             
         spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle));
 
+        uiUpdater.abilityCooldown();
+
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
+        healthBar.SetHealth(health);
         if (health <= 0){
             Destroy(gameObject);
             // Go back to main menu
@@ -93,6 +101,10 @@ public class PlayerController : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Enemy"))
             {
                 ((MindSwap)mindSwap.GetComponent<Ability>().ability).Spawn(hit.collider.gameObject);
+                uiUpdater.UpdateAbilityUI(spell.GetComponent<SpriteRenderer>().sprite);
+                uiUpdater.mindswapCooldown();
+                healthBar.SetMaxHealth(health);
+                healthBar.SetHealth(health);
             }
         }
     }

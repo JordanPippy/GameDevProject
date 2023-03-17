@@ -6,7 +6,7 @@ public delegate void BehaviourDelegate();
 
 public class EnemyController : MonoBehaviour
 {
-    public float health = 10;
+    public int health = 10;
     public float speed = 1;
 
     public GameObject spell;
