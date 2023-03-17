@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         uiUpdater = GetComponent<UIUpdater>();
-        uiUpdater.UpdateAbilityUI(spell.GetComponent<SpriteRenderer>().sprite);
+        uiUpdater.UpdateAbilityUI(spell.GetComponent<Ability>().ability.UIicon);
         healthBar.SetMaxHealth(health);
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(GameObject.Find("Canvas"));
@@ -75,19 +75,6 @@ public class PlayerController : MonoBehaviour
             // Go back to main menu
             SceneManager.LoadScene(0);
             // Delete all persistent player data
-        }
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if(scene.buildIndex==1){
-            // Load level 1 position
-        }else if(scene.buildIndex==2){
-            // Load level 2 position
-        }else if(scene.buildIndex==3){
-            // Load level 3 position
-        }else if(scene.buildIndex==4){
-            // Load level 4 position
         }
     }
 
