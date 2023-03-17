@@ -10,6 +10,10 @@ public class GenericAIController: MonoBehaviour
 
     public GameObject spell;
     public GameObject player;
+
+    public Rigidbody2D playerRB;
+    public Collider2D playerCol2D;
+
     public Rigidbody2D rb2D;
     public Collider2D col2D;
 
@@ -19,6 +23,8 @@ public class GenericAIController: MonoBehaviour
         {
             player = GameObject.Find("Player");
         }
+        playerRB = player.GetComponent<Rigidbody2D>();
+        playerCol2D = player.GetComponent<Collider2D>();
 
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -68,43 +74,45 @@ public class GenericAIController: MonoBehaviour
         return targetPosition;
     }
 
-    public Vector2 MoveAwayFromPlayer()
+    public Vector2 MoveAwayFromPlayer(float dist)
     {
         int iters = 0;
 
         //TODO: store this so as to not look it up every time
-        Rigidbody2D playerRB = player.GetComponent<Rigidbody2D>();
         Vector2 oppositePlayerDir = (rb2D.position - playerRB.position).normalized;
         
         //add some varation to his movement
         oppositePlayerDir.x = oppositePlayerDir.x + Random.Range(-0.3f, 0.3f);
         oppositePlayerDir.y = oppositePlayerDir.y + Random.Range(-0.3f, 0.3f);
 
-        print(oppositePlayerDir);
+        Vector2 targetPosition = rb2D.position;
+        Vector2 increment = oppositePlayerDir * 2f;
 
-        Vector2 targetPosition = rb2D.position + oppositePlayerDir * 5f;
-
-        while (!isValidPos(targetPosition))
+        while (isValidPos(targetPosition) && Vector2.Distance(playerRB.position, targetPosition) <= dist)
         {
+            print(Vector2.Distance(playerRB.position, targetPosition));
             iters += 1;
 
             //make sure the game doesnt get stuck in a loop
             //if a pos can't be found
-            if (iters > 100) {
+            //set to ten for cultist 2, if dif otions needed then add a param
+            if (iters > 10) {
                 print("could not find");
-                MoveRandomPosition(5);
+                targetPosition = MoveRandomPosition(5);
                 break;
             }
 
-            targetPosition = rb2D.position + oppositePlayerDir * 5f;
+            targetPosition = targetPosition + increment;
         }
+        print("break" + Vector2.Distance(playerRB.position, targetPosition));
+
+        targetPosition = targetPosition - increment;
 
         return targetPosition;
     }
 
     public Vector2 ChasePlayer()
     {
-        Rigidbody2D playerRB = player.GetComponent<Rigidbody2D>();
         Vector2 playerDir = (playerRB.position - rb2D.position).normalized;
 
         Vector2 targetPosition = playerRB.position - (playerDir * 1.5f);
@@ -158,7 +166,7 @@ public class GenericAIController: MonoBehaviour
             for (int i = 0; i < total; i ++)
             {
                 if (hits2[i] != null && 
-                    hits2[i].collider != player.GetComponent<Collider2D>() &&
+                    hits2[i].collider != playerCol2D &&
                     !hits2[i].collider.isTrigger
                 )
                 {
