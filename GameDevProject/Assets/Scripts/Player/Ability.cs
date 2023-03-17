@@ -23,7 +23,6 @@ public class Ability : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("OnCollisionEnter2D");
         ability.Use(col.gameObject);
         Destroy(gameObject);
     }

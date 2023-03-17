@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public GameObject spell;
     public GameObject mindSwap;
     public int health = 20;
+    public int maxHealth;
     public HealthBar healthBar;
 
     // Private Variables
@@ -25,7 +26,8 @@ public class PlayerController : MonoBehaviour
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         uiUpdater = GetComponent<UIUpdater>();
         uiUpdater.UpdateAbilityUI(spell.GetComponent<SpriteRenderer>().sprite);
-        healthBar.SetMaxHealth(health);
+        maxHealth = health;
+        healthBar.SetMaxHealth(maxHealth);
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(GameObject.Find("Canvas"));
     }
@@ -104,7 +106,7 @@ public class PlayerController : MonoBehaviour
                 ((MindSwap)mindSwap.GetComponent<Ability>().ability).Spawn(hit.collider.gameObject);
                 uiUpdater.UpdateAbilityUI(spell.GetComponent<SpriteRenderer>().sprite);
                 uiUpdater.mindswapCooldown();
-                healthBar.SetMaxHealth(health);
+                healthBar.SetMaxHealth(maxHealth);
                 healthBar.SetHealth(health);
             }
         }
