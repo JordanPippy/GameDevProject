@@ -31,13 +31,18 @@ public class MindSwap : AbilityBase
         player.maxHealth = enemy.maxHealth;
         enemy.health = tempMaxHealth;
 
-        // float tempSpeed = speed;
-        // speed = enemy.speed;
-        // enemy.speed = tempSpeed;
+        float tempSpeed = player.speed;
+        player.speed = enemy.speed;
+        enemy.speed = tempSpeed;
 
         tempSpell = player.spell;
         player.spell = enemy.spell;
         enemy.spell = tempSpell;
+
+        Vector2 tempCollider = player.GetComponent<BoxCollider2D>().size;
+        player.GetComponent<BoxCollider2D>().size = enemy.GetComponent<BoxCollider2D>().size;
+        enemy.GetComponent<BoxCollider2D>().size = tempCollider;
+        
     }
 
     public void Spawn(GameObject other)
