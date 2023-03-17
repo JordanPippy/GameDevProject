@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2D;
     private UIUpdater uiUpdater;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
