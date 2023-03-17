@@ -7,6 +7,7 @@ public delegate void BehaviourDelegate();
 public class EnemyController : MonoBehaviour
 {
     public int health = 10;
+    public int maxHealth;
     public float speed = 1;
 
     public GameObject spell;
@@ -28,6 +29,7 @@ public class EnemyController : MonoBehaviour
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         bc2D = gameObject.GetComponent<BoxCollider2D>();
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        maxHealth = health;
 
         if (player == null)
         {
