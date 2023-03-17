@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GenericAIController: MonoBehaviour
 {
-    public float health = 10;
+    public int maxHealth = 10;
+    public int health = 10;
     public float speed = 1;
 
     public GameObject spell;
