@@ -170,7 +170,7 @@ public class GenericAIController: MonoBehaviour
                     !hits2[i].collider.isTrigger
                 )
                 {
-                    print("name " + hits2[i].collider.transform.name);
+                    //print("name " + hits2[i].collider.transform.name);
                     is_valid_pos = false;
                 }
             }

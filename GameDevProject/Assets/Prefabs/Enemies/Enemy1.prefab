@@ -121,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.125}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.25}
@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.4}
+  m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
 --- !u!114 &2456088542755052369
 MonoBehaviour:
@@ -151,5 +151,7 @@ MonoBehaviour:
   speed: 2
   spell: {fileID: 4727960746900162411, guid: a7fbd2073056d79488f92a4bc87ec3fe, type: 3}
   player: {fileID: 0}
+  playerRB: {fileID: 0}
+  playerCol2D: {fileID: 0}
   rb2D: {fileID: 0}
   col2D: {fileID: 0}
