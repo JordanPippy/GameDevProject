@@ -23,6 +23,9 @@ public class AblShootNormal : Ability
     void OnTriggerEnter2D(Collider2D col)
     {
         ability.Use(col.gameObject);
-        Destroy(gameObject);
+        if (col.tag != this.tag)
+        {
+            Destroy(gameObject);
+        }
     }
 }

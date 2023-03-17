@@ -9,12 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4727960746900162413}
-  - component: {fileID: 1233153674244519264}
-  - component: {fileID: 5677243188197232880}
+  - component: {fileID: 2887508110023578998}
   m_Layer: 0
-  m_Name: mind_swap_prefab
+  m_Name: scatter_prefab
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -33,33 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1233153674244519264
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4727960746900162411}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.32}
-    newSize: {x: 0.48, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.6}
-  m_EdgeRadius: 0
---- !u!114 &5677243188197232880
+--- !u!114 &2887508110023578998
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,8 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4727960746900162411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7698e334c6586d345830c154f98e87f3, type: 3}
+  m_Script: {fileID: 11500000, guid: fd8997868f8f8114a8355b1d25aec135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: df37ff3c49216994d95fe79bfc2f3a66, type: 2}
-  speed: 0
+  ability: {fileID: 11400000, guid: 7f7192e455c512e4ca77375bd0e4ad01, type: 2}
+  projectileSpeed: 10
+  projectileTotal: 3
+  scatterAngle: 10
+  projectilePrefab: {fileID: 11400000, guid: 2b9e656656a62e14db1b427b7d1042be, type: 2}
