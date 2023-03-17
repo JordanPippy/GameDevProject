@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
         uiUpdater.UpdateAbilityUI(spell.GetComponent<SpriteRenderer>().sprite);
         healthBar.SetMaxHealth(health);
         DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(GameObject.Find("Canvas"));
     }
 
     // Update is called once per frame
