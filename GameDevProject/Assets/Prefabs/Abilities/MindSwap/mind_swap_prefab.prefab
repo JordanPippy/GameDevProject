@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4727960746900162413}
-  - component: {fileID: -424269435046983516}
   - component: {fileID: 1233153674244519264}
+  - component: {fileID: 5677243188197232880}
   m_Layer: 0
   m_Name: mind_swap_prefab
   m_TagString: Untagged
@@ -33,20 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-424269435046983516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4727960746900162411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 347938a1ccbe1394f9292f119c693041, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: df37ff3c49216994d95fe79bfc2f3a66, type: 2}
-  speed: 10
 --- !u!61 &1233153674244519264
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73,3 +59,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5462295, y: 0.31465667}
   m_EdgeRadius: 0
+--- !u!114 &5677243188197232880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4727960746900162411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7698e334c6586d345830c154f98e87f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: df37ff3c49216994d95fe79bfc2f3a66, type: 2}
+  speed: 1
