@@ -130,8 +130,8 @@ GameObject:
   - component: {fileID: 8880883494765775617}
   - component: {fileID: 8880883494765775618}
   - component: {fileID: 8880883494765775619}
-  - component: {fileID: 8880883494765775644}
   - component: {fileID: 8880883494765775623}
+  - component: {fileID: 5184631767485237277}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -254,6 +254,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8880883494765775623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880883494765775645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e763dc2985bd8443a41db39e7cd4168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mindswapImage: {fileID: 0}
+  abilityImage: {fileID: 0}
 --- !u!114 &5184631767485237277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,17 +285,5 @@ MonoBehaviour:
   mindSwap: {fileID: 4727960746900162411, guid: 00b4165ee2a1bf747a69c92876b1d07c, type: 3}
   health: 20
   healthBar: {fileID: 0}
---- !u!114 &8880883494765775623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8880883494765775645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e763dc2985bd8443a41db39e7cd4168, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mindswapImage: {fileID: 0}
-  abilityImage: {fileID: 0}
+  spellCooldown: 0.5
+  mindSwapCooldown: 10
