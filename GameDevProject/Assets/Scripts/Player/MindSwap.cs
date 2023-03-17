@@ -7,7 +7,7 @@ public class MindSwap : AbilityBase
 {
     public override void Use(GameObject other)
     {
-        EnemyController enemy = other.GetComponent<EnemyController>();
+        GenericAIController enemy = other.GetComponent<GenericAIController>();
         PlayerController player = enemy.player.GetComponent<PlayerController>();
 
         SpriteRenderer playerRenderer = player.GetComponent<SpriteRenderer>();
