@@ -280,10 +280,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b1aeb9c52b4f84699d45cb20c1c8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 3
+  playerSpeedBonus: 6
   spell: {fileID: 4727960746900162411, guid: a7fbd2073056d79488f92a4bc87ec3fe, type: 3}
   mindSwap: {fileID: 4727960746900162411, guid: 00b4165ee2a1bf747a69c92876b1d07c, type: 3}
   health: 20
+  maxHealth: 0
   healthBar: {fileID: 0}
-  spellCooldown: 0.5
-  mindSwapCooldown: 10
