@@ -31304,9 +31304,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  playerSpeedBonus: 5
   spell: {fileID: 4727960746900162411, guid: a7fbd2073056d79488f92a4bc87ec3fe, type: 3}
   mindSwap: {fileID: 4727960746900162411, guid: 00b4165ee2a1bf747a69c92876b1d07c, type: 3}
   health: 20
+  maxHealth: 0
+  healthBar: {fileID: 0}
 --- !u!50 &1010008686
 Rigidbody2D:
   serializedVersion: 4
@@ -106626,7 +106629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4894167602778282196, guid: 6b9afd0bfc651ca47bd6613c7a3e4e3d, type: 3}
       propertyPath: nextScene
-      value: Main Menu
+      value: Cavern1
       objectReference: {fileID: 0}
     - target: {fileID: 4894167602778282197, guid: 6b9afd0bfc651ca47bd6613c7a3e4e3d, type: 3}
       propertyPath: m_Name

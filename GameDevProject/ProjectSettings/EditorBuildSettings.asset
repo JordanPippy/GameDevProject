@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LowTown1.unity
     guid: 05aca71df5c575a4498ef80be94918a6
   - enabled: 1
-    path: Assets/Scenes/Cavern1.unity
-    guid: fbd9db079c75a674896fdac0d9a08ee7
-  - enabled: 1
     path: Assets/Scenes/Lab.unity
     guid: e8646681c615118408e51e2043a65e61
+  - enabled: 1
+    path: Assets/Scenes/Cavern1.unity
+    guid: fbd9db079c75a674896fdac0d9a08ee7
   m_configObjects: {}

@@ -12,7 +12,8 @@ public class UIUpdater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //abilityImage=GameObject.Find("AbilityImage").GetComponent<Image>();
+        mindswapImage=GameObject.Find("MindswapImage").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -24,7 +25,11 @@ public class UIUpdater : MonoBehaviour
 
     public void UpdateAbilityUI(Sprite abilitySprite)
     {
-        abilityImage.GetComponent<Image>().sprite = abilitySprite;
+        if(abilityImage==null){
+            // Some spaghetti code to fix this being called in the PlayerController start()
+            abilityImage=GameObject.Find("AbilityImage").GetComponent<Image>();
+        }
+        abilityImage.sprite = abilitySprite;
     }
 
     public void AbilityCooldown()
