@@ -25,13 +25,13 @@ public class MindSwap : AbilityBase
             playerRenderer.sprite = enemyRenderer.sprite;
             enemyRenderer.sprite = temp;
 
-            int tempHealth = player.health;
-            player.health = enemy.health;
-            enemy.health = tempHealth;
+            //int tempHealth = player.health;
+            enemy.health = player.health;
+            player.health = enemy.maxHealth;
 
             int tempMaxHealth = player.maxHealth;
             player.maxHealth = enemy.maxHealth;
-            enemy.health = tempMaxHealth;
+            enemy.maxHealth = tempMaxHealth;
 
             float tempSpeed = player.speed - player.playerSpeedBonus;
             player.speed = enemy.speed + player.playerSpeedBonus;
