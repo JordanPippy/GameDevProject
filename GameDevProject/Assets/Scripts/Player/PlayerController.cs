@@ -14,18 +14,22 @@ public class PlayerController : MonoBehaviour
     public int health = 20;
     public int maxHealth;
     public HealthBar healthBar;
+    public AudioClip cityMusic, labMusic, caveMusic;
 
     // Private Variables
     private float horizontal, vertical;
     private float spellCooldown, mindSwapCooldown;
     private float spellTimer, mindSwapTimer;
     private Rigidbody2D rb2D;
-
     private UIUpdater uiUpdater;
+    private GameObject canvas;
 
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.activeSceneChanged += ChangedActiveScene;
+        gameObject.GetComponent<AudioSource>().clip=cityMusic;
+        gameObject.GetComponent<AudioSource>().Play();
         AbilityBase spellbase = spell.GetComponent<Ability>().ability;
         AbilityBase swapbase = mindSwap.GetComponent<Ability>().ability;
         spellCooldown = spellbase.cooldown;
@@ -38,6 +42,7 @@ public class PlayerController : MonoBehaviour
         uiUpdater.UpdateAbilityUI(spell.GetComponent<Ability>().ability.UIicon);
         maxHealth = health;
         speed += playerSpeedBonus;
+        healthBar=GameObject.Find("Health Bar").GetComponent<HealthBar>();
         healthBar.SetMaxHealth(maxHealth);
         uiUpdater.SetAbilityCooldown(spellCooldown);
         uiUpdater.SetMindswapCooldown(mindSwapCooldown);
@@ -92,9 +97,9 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        healthBar.SetHealth(health);
+        //healthBar.SetHealth(health);
         if (health <= 0){
-            Destroy(gameObject);
+            //Destroy(gameObject);
             // Go back to main menu
             SceneManager.LoadScene(0);
             // Delete all persistent player data
@@ -115,7 +120,7 @@ public class PlayerController : MonoBehaviour
                 // Only put mindswap on cooldown when successful
                 mindSwapTimer = 0f;
                 ((MindSwap)mindSwap.GetComponent<Ability>().ability).Spawn(hit.collider.gameObject);
-                uiUpdater.UpdateAbilityUI(spell.GetComponent<SpriteRenderer>().sprite);
+                uiUpdater.UpdateAbilityUI(spell.GetComponent<Ability>().ability.UIicon);
                 uiUpdater.MindswapCooldown();
                 spellCooldown = spell.GetComponent<Ability>().ability.cooldown;
                 uiUpdater.SetAbilityCooldown(spellCooldown);
@@ -123,5 +128,19 @@ public class PlayerController : MonoBehaviour
                 healthBar.SetHealth(health);
             }
         }
+    }
+
+    // Music handling on player because I want it to be even more monolithic
+    private void ChangedActiveScene(Scene current, Scene next)
+    {
+        gameObject.GetComponent<AudioSource>().Stop();
+        if(next.buildIndex==1){
+            gameObject.GetComponent<AudioSource>().clip=cityMusic;
+        }else if(next.buildIndex==2){
+            gameObject.GetComponent<AudioSource>().clip=labMusic;
+        }else if(next.buildIndex==3){
+            gameObject.GetComponent<AudioSource>().clip=caveMusic;
+        }
+        gameObject.GetComponent<AudioSource>().Play();
     }
 }

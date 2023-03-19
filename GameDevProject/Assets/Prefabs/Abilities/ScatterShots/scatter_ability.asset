@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: scatter_ability
   m_EditorClassIdentifier: 
   title: Scatter Bolt
-  damage: 0
+  damage: 2
   cooldown: 0.8
   prefab: {fileID: 4727960746900162411, guid: 3e96e294ba65b9a49b946968c67fe8f4, type: 3}
   UIicon: {fileID: 21300000, guid: 7cf71d4b32e2bdb4a973b9a6cba32396, type: 3}
