@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -2202744411294078213}
   - component: {fileID: 4888027057390623766}
   - component: {fileID: -3018201646382294029}
+  - component: {fileID: -6562672836266357290}
   m_Layer: 0
   m_Name: Cultist2
   m_TagString: Enemy
@@ -137,7 +138,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.25}
@@ -148,7 +149,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 1}
+  m_Size: {x: 0.7, y: 0.6}
   m_EdgeRadius: 0
 --- !u!114 &-3018201646382294029
 MonoBehaviour:
@@ -165,9 +166,27 @@ MonoBehaviour:
   maxHealth: 10
   health: 10
   speed: 2
+  swappable: 1
   spell: {fileID: 4727960746900162411, guid: 3e96e294ba65b9a49b946968c67fe8f4, type: 3}
   player: {fileID: 0}
   playerRB: {fileID: 0}
   playerCol2D: {fileID: 0}
   rb2D: {fileID: 0}
   col2D: {fileID: 0}
+--- !u!114 &-6562672836266357290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456088542755052364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0604f76581ad42d4fa1e522945ea65a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets:
+  - {fileID: -3018201646382294029}
+  startInactive: 1
+  checkTime: 1
+  detectionRange: 10

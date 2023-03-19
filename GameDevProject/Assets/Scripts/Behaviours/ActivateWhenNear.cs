@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Enables the target monobehaviour when the player is near.
+/// Enables target behaviour(s) when the player is near.
 /// </summary>
 public class ActivateWhenNear : MonoBehaviour
 {
-    public MonoBehaviour target;
+    public List<Behaviour> targets;
     public bool startInactive;
-    public float checkTime = 5f;
-    public float detectionRange = 5f;
+    public float checkTime = 1f;
+    public float detectionRange = 10f;
 
     private PlayerController player;
     private float checkTimer = 0f;
@@ -19,19 +19,25 @@ public class ActivateWhenNear : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
         if (startInactive)
-            target.enabled = false;
+            foreach (Behaviour target in targets)
+            {
+                target.enabled = false;
+            }
     }
     // Update is called once per frame
     void Update()
     {
+        // A collider trigger would make more sense but this distance check works fine
         if (checkTimer > checkTime)
         {
             checkTime = 0;
             if (Vector3.Distance(player.transform.position,transform.position) < detectionRange)
             {
-                target.enabled = true;
+                foreach (Behaviour target in targets)
+                {
+                    target.enabled = true;
+                }
                 this.enabled = false;
-                //Debug.Log($"Player is near {gameObject.name}");
             }
         }
         else

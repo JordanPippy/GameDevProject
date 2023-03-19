@@ -9,7 +9,7 @@ public class MindSwap : AbilityBase
     {
         GenericAIController enemy = other.GetComponent<GenericAIController>();
         // Jank prevention of mindswapping into bosses
-        if(enemy.maxHealth<50){
+        if(enemy.swappable){
             PlayerController player = enemy.player.GetComponent<PlayerController>();
 
             SpriteRenderer playerRenderer = player.GetComponent<SpriteRenderer>();
