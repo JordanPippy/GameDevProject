@@ -151,7 +151,7 @@ MonoBehaviour:
   health: 5
   speed: 4
   swappable: 1
-  spell: {fileID: 4727960746900162411, guid: a7fbd2073056d79488f92a4bc87ec3fe, type: 3}
+  spell: {fileID: 4727960746900162411, guid: 082f1cf07d3f93c499e0835a2f68461a, type: 3}
   player: {fileID: 0}
   playerRB: {fileID: 0}
   playerCol2D: {fileID: 0}
