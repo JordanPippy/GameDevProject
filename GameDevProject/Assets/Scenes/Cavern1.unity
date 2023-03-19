@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 199607815}
   - component: {fileID: 199607814}
   m_Layer: 0
-  m_Name: objects
+  m_Name: bossdoorTiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,16 +403,6 @@ Tilemap:
   m_GameObject: {fileID: 199607812}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: 51, y: 2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 125, y: 15, z: 0}
     second:
       serializedVersion: 2
@@ -449,17 +439,17 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 6defd813a2bb0f245aeebfda75363bf6, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 737c18eb165df8e4aa6dece3fc4a0888, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: 2034148706, guid: 9337116ca0c02854294c756c8d3045ef, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1826559375, guid: 9337116ca0c02854294c756c8d3045ef, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data:
       e00: 1
       e01: 0
@@ -478,7 +468,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -1323,7 +1313,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 10
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1854,16 +1844,16 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: 520065618, guid: 9337116ca0c02854294c756c8d3045ef, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1073400407, guid: 9337116ca0c02854294c756c8d3045ef, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 11
     m_Data: {fileID: -370695849, guid: 9337116ca0c02854294c756c8d3045ef, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: 1899916091, guid: 9337116ca0c02854294c756c8d3045ef, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1073400407, guid: 9337116ca0c02854294c756c8d3045ef, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1979040252, guid: 9337116ca0c02854294c756c8d3045ef, type: 3}
   - m_RefCount: 1
@@ -93654,7 +93644,7 @@ GameObject:
   - component: {fileID: 1585168803}
   - component: {fileID: 1585168802}
   m_Layer: 0
-  m_Name: Bossdoor
+  m_Name: BossdoorGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Enables target behaviour(s) when the player is near.
+/// Enables target behaviour(s) when the player is near. Deletes itself after activating.
 /// </summary>
 public class ActivateWhenNear : MonoBehaviour
 {
@@ -27,7 +27,7 @@ public class ActivateWhenNear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // A collider trigger would make more sense but this distance check works fine
+        // A collision trigger would make more sense but this distance check works fine
         if (checkTimer > checkTime)
         {
             checkTime = 0;
@@ -37,7 +37,8 @@ public class ActivateWhenNear : MonoBehaviour
                 {
                     target.enabled = true;
                 }
-                this.enabled = false;
+                // Delete itself after activating
+                Destroy(this);
             }
         }
         else
