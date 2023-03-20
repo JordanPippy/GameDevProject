@@ -20,10 +20,7 @@ public class GenericAIController: MonoBehaviour
 
     public void AIStart()
     {
-        if (player == null)
-        {
-            player = GameObject.Find("Player");
-        }
+        player = GameObject.Find("Player");
         playerRB = player.GetComponent<Rigidbody2D>();
         playerCol2D = player.GetComponent<Collider2D>();
 
