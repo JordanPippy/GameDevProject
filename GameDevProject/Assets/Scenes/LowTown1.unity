@@ -326,10 +326,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy1
       objectReference: {fileID: 0}
-    - target: {fileID: 2456088542755052369, guid: 290a5f64510b4ee47b7257ab2c047c4f, type: 3}
-      propertyPath: spell
-      value: 
-      objectReference: {fileID: 4727960746900162411, guid: 221ce4497c767c9488b38f3192d0ec86, type: 3}
     - target: {fileID: 2456088542755052371, guid: 290a5f64510b4ee47b7257ab2c047c4f, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -65658,14 +65654,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5666820815260653734, guid: 3bbed0b0a7c4c4f4190016c416e75eb0, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+    - target: {fileID: 5666820815441005347, guid: 3bbed0b0a7c4c4f4190016c416e75eb0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5666820815441005346, guid: 3bbed0b0a7c4c4f4190016c416e75eb0, type: 3}
-      propertyPath: hpText
-      value: 
-      objectReference: {fileID: 563450940}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bbed0b0a7c4c4f4190016c416e75eb0, type: 3}
 --- !u!224 &1237146359 stripped

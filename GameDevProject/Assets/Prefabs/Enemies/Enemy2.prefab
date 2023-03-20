@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -147,11 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6376949a502224aaf1c341b83852e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  health: 5
+  maxHealth: 6
+  health: 6
   speed: 4
   swappable: 1
-  spell: {fileID: 4727960746900162411, guid: 082f1cf07d3f93c499e0835a2f68461a, type: 3}
+  spell: {fileID: 4727960746900162411, guid: 25f215574210ac5468984001eeb52044, type: 3}
   player: {fileID: 0}
   playerRB: {fileID: 0}
   playerCol2D: {fileID: 0}

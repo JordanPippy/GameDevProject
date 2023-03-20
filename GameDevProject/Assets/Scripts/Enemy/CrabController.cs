@@ -7,7 +7,7 @@ public class CrabController : GenericAIController
     private Vector2 targetPosition;
 
     private float time = 0.0f;
-    private float abilityTime = 2.0f;
+    private float abilityTime = 0.8f;
 
     private float update_pos_time = 0.0f;
     public bool run_away_reached = true;
