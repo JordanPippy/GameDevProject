@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18bd3731385ea294db7157236a765114, type: 3}
-  m_Name: melee_ability
+  m_Name: melee_abiliity
   m_EditorClassIdentifier: 
   title: Plasma Bolt
   damage: 5
-  cooldown: 0
-  prefab: {fileID: 4727960746900162411, guid: 082f1cf07d3f93c499e0835a2f68461a, type: 3}
-  UIicon: {fileID: 21300000, guid: d3ba291a6bfd3224d94dba6179a3a3c7, type: 3}
+  cooldown: 0.2
+  prefab: {fileID: 4727960746900162411, guid: 25f215574210ac5468984001eeb52044, type: 3}
+  UIicon: {fileID: 21300000, guid: 101bd87e0cb32454cb8e4cc5b1efa335, type: 3}
