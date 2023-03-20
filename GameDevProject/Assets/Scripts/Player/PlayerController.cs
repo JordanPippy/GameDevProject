@@ -63,14 +63,14 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Space) && spellTimer >= spellCooldown)
+        if (Input.GetMouseButtonDown(0) && spellTimer >= spellCooldown)
         {
             spellTimer = 0f;
             CastAbility();
         }
 
         // Don't even try to swap if we're on cooldown
-        if (Input.GetMouseButtonDown(0) && mindSwapTimer >= mindSwapCooldown) 
+        if (Input.GetMouseButtonDown(1) && mindSwapTimer >= mindSwapCooldown) 
         {  
             DetectMindSwap();
         }  

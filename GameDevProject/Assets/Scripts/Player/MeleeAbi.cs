@@ -30,17 +30,22 @@ public class MeleeAbi : Ability
     }
 
     void OnTriggerEnter2D(Collider2D col)
-    {
-        ability.Use(col.gameObject);
-        
-        if (col.tag == "Projectile")
+    {      
+        //crab melee attacks destroy incoming projectiles (otherwise, crab is not viable)   
+        //check if its a projectile
+        if (col.GetComponent<Ability>() != null)
         {
             Destroy(col.gameObject);
+            print("kljfalk");
         }
 
-        if (col.tag != this.tag)
+        if (!this.CompareTag(col.tag))
         {
-            Destroy(gameObject);
+            if (col.GetComponent<Ability>() == null)
+            {
+                ability.Use(col.gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -174,4 +174,4 @@ MonoBehaviour:
   - {fileID: 1836293595979139223}
   startInactive: 1
   checkTime: 1
-  detectionRange: 10
+  detectionRange: 15

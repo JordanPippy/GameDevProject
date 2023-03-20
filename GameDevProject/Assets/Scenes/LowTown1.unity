@@ -65881,6 +65881,10 @@ PrefabInstance:
       propertyPath: checkTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2213242607940010269, guid: 101492078ba20b7489ea908bf28f324c, type: 3}
+      propertyPath: detectionRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2456088542755052364, guid: 101492078ba20b7489ea908bf28f324c, type: 3}
       propertyPath: m_Name
       value: Enemy2
