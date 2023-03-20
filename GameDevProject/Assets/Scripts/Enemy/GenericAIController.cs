@@ -92,7 +92,7 @@ public class GenericAIController: MonoBehaviour
 
         while (isValidPos(targetPosition) && Vector2.Distance(playerRB.position, targetPosition) <= dist)
         {
-            print(Vector2.Distance(playerRB.position, targetPosition));
+            //print(Vector2.Distance(playerRB.position, targetPosition));
             iters += 1;
 
             //make sure the game doesnt get stuck in a loop
@@ -106,7 +106,7 @@ public class GenericAIController: MonoBehaviour
 
             targetPosition = targetPosition + increment;
         }
-        print("break" + Vector2.Distance(playerRB.position, targetPosition));
+        //print("break" + Vector2.Distance(playerRB.position, targetPosition));
 
         targetPosition = targetPosition - increment;
 
@@ -225,6 +225,6 @@ public class GenericAIController: MonoBehaviour
     {
         float angle = Library.MousePlayerAngle(player.transform.position, transform.position);
             
-        spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle));
+        spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle), tag);
     }
 }
