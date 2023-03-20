@@ -30,12 +30,13 @@ public class ActivateWhenNear : MonoBehaviour
         // A collision trigger would make more sense but this distance check works fine
         if (checkTimer > checkTime)
         {
-            checkTime = 0;
+            checkTimer = 0;
             if (Vector3.Distance(player.transform.position,transform.position) < detectionRange)
             {
                 foreach (Behaviour target in targets)
                 {
-                    target.enabled = true;
+                    if (target != null)
+                        target.enabled = true;
                 }
                 // Delete itself after activating
                 Destroy(this);
