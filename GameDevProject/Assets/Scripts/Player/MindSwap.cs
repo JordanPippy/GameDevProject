@@ -47,7 +47,7 @@ public class MindSwap : AbilityBase
             
             Vector2 tempColliderOffset = player.GetComponent<BoxCollider2D>().offset;
             player.GetComponent<BoxCollider2D>().offset = enemy.GetComponent<BoxCollider2D>().offset;
-            enemy.GetComponent<BoxCollider2D>().offset = tempCollider;
+            enemy.GetComponent<BoxCollider2D>().offset = tempColliderOffset;
         }
     }
 
