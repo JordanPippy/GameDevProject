@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
 
         float angle = Library.MousePlayerAngle(mousePos, transform.position);
             
-        spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle));
+        spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle), tag);
 
         uiUpdater.AbilityCooldown();
 
