@@ -225,6 +225,6 @@ public class GenericAIController: MonoBehaviour
     {
         float angle = Library.MousePlayerAngle(player.transform.position, transform.position);
             
-        spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle));
+        spell.GetComponent<Ability>().ability.Spawn(transform.position, Quaternion.Euler(0, 0, angle), tag);
     }
 }

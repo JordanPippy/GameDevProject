@@ -12,9 +12,10 @@ public abstract class AbilityBase : ScriptableObject
 
     public abstract void Use(GameObject other);
 
-    public virtual void Spawn(Vector3 position, Quaternion rotation)
+    public virtual void Spawn(Vector3 position, Quaternion rotation, string tag)
     {
         GameObject clone = Instantiate(prefab, position, rotation);
+        clone.tag = tag;
         Destroy(clone, 5);
     }
 }

@@ -31,7 +31,7 @@ public class AblShootScatter : Ability
             // Alternate +/- for above/below
             if (i % 2 == 0)
                 angle.z = -angle.z;
-            projectilePrefab.Spawn(transform.position, Quaternion.Euler(transform.rotation.eulerAngles + angle));
+            projectilePrefab.Spawn(transform.position, Quaternion.Euler(transform.rotation.eulerAngles + angle), tag);
         }
         Destroy(gameObject);
     }

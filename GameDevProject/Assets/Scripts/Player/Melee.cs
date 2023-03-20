@@ -30,7 +30,13 @@ public class Melee : Ability
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        ability.Use(col.gameObject);
-        Destroy(gameObject);
+        if (!this.CompareTag(col.tag))
+        {
+            if (col.GetComponent<Ability>() == null)
+            {
+                ability.Use(col.gameObject);
+                Destroy(gameObject);
+            }
+        }
     }
 }
