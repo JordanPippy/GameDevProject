@@ -140,7 +140,7 @@ public class Boss0Controller : GenericAIController
         
         Vector2 tempColliderOffset = thisBoss.GetComponent<BoxCollider2D>().offset;
         thisBoss.GetComponent<BoxCollider2D>().offset = otherBoss.GetComponent<BoxCollider2D>().offset;
-        otherBoss.GetComponent<BoxCollider2D>().offset = tempCollider;
+        otherBoss.GetComponent<BoxCollider2D>().offset = tempColliderOffset;
     }
 
 }

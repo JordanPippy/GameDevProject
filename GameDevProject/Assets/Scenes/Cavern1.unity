@@ -29890,7 +29890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5666820815260653729, guid: 3bbed0b0a7c4c4f4190016c416e75eb0, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5666820815260653729, guid: 3bbed0b0a7c4c4f4190016c416e75eb0, type: 3}
       propertyPath: m_AnchorMax.x
@@ -94085,10 +94085,9 @@ MonoBehaviour:
   - {fileID: 1220765772}
   - {fileID: 1181939090}
   - {fileID: 1585168802}
-  - {fileID: 0}
   startInactive: 1
-  checkTime: 5
-  detectionRange: 5
+  checkTime: 2
+  detectionRange: 7
 --- !u!4 &2117244244
 Transform:
   m_ObjectHideFlags: 0
@@ -94097,7 +94096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117244242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 133.885, y: 17.40879, z: 2.8769543}
+  m_LocalPosition: {x: 135.45, y: 16.67, z: 2.8769543}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -94257,7 +94256,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9123742350986132473
 SpriteRenderer:
