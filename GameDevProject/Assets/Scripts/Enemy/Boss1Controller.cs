@@ -16,6 +16,7 @@ public class Boss1Controller : GenericAIController
         AIStart();
         targetPosition = MoveAwayFromPlayer(10);
         update_pos_time = Time.time;
+        swappable = false;
     }
 
     // Update is called once per frame

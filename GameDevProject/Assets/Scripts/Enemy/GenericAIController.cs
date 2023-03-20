@@ -5,8 +5,9 @@ using UnityEngine;
 public class GenericAIController: MonoBehaviour
 {
     public int maxHealth = 10;
-    public int health = 10;
+    public int health = 0;
     public float speed = 1;
+    public bool swappable = true;
 
     public GameObject spell;
     public GameObject player;
@@ -30,6 +31,7 @@ public class GenericAIController: MonoBehaviour
         rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         col2D = gameObject.GetComponent<Collider2D>();
+        health = maxHealth;
     }
 
     public void AIUpdate()

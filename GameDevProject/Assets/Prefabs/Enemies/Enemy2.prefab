@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2456088542755052365}
   - component: {fileID: 2456088542755052368}
   - component: {fileID: 1836293595979139223}
+  - component: {fileID: -2213242607940010269}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Enemy
@@ -149,10 +150,28 @@ MonoBehaviour:
   maxHealth: 10
   health: 5
   speed: 4
-  spell: {fileID: 4727960746900162411, guid: a7fbd2073056d79488f92a4bc87ec3fe, type: 3}
+  swappable: 1
+  spell: {fileID: 4727960746900162411, guid: 082f1cf07d3f93c499e0835a2f68461a, type: 3}
   player: {fileID: 0}
   playerRB: {fileID: 0}
   playerCol2D: {fileID: 0}
   rb2D: {fileID: 0}
   col2D: {fileID: 0}
   run_away_reached: 1
+--- !u!114 &-2213242607940010269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456088542755052364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0604f76581ad42d4fa1e522945ea65a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets:
+  - {fileID: 1836293595979139223}
+  startInactive: 1
+  checkTime: 5
+  detectionRange: 10

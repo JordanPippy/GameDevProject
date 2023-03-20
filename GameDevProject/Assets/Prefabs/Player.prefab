@@ -221,7 +221,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.225}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -232,7 +232,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.65, y: 0.6}
+  m_Size: {x: 0.55, y: 0.6}
   m_EdgeRadius: 0
 --- !u!50 &8880883494765775619
 Rigidbody2D:
@@ -288,7 +288,6 @@ MonoBehaviour:
   health: 20
   maxHealth: 0
   healthBar: {fileID: 0}
-  menuMusic: {fileID: 8300000, guid: b74a219e9c6aa6b0a92d5f620d0e519c, type: 3}
   cityMusic: {fileID: 8300000, guid: d61fdeab0ceca55debdfa6fcd36fa968, type: 3}
   labMusic: {fileID: 8300000, guid: 7a1a45f63778cb0ebac9005a0364193e, type: 3}
   caveMusic: {fileID: 8300000, guid: 6e5e6e8dd41cb7df09964086b86ab2fd, type: 3}
