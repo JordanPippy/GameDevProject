@@ -66,7 +66,7 @@ public class CrabController : GenericAIController
     {
         if (col.gameObject == player)
         {
-            targetPosition = MoveRandomPosition(5);
+            targetPosition = MoveAwayFromPlayer(10);
             player.GetComponent<PlayerController>().TakeDamage(2);
 
             run_away_reached = false;
