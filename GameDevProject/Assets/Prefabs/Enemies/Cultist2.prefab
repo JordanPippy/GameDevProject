@@ -173,6 +173,7 @@ MonoBehaviour:
   playerCol2D: {fileID: 0}
   rb2D: {fileID: 0}
   col2D: {fileID: 0}
+  bloodprefab: {fileID: 7287670526877647761, guid: 530a2a0eabd469943a1c68d9a907335c, type: 3}
 --- !u!114 &-6562672836266357290
 MonoBehaviour:
   m_ObjectHideFlags: 0

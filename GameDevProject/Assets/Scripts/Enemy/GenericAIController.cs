@@ -18,6 +18,8 @@ public class GenericAIController: MonoBehaviour
     public Rigidbody2D rb2D;
     public Collider2D col2D;
 
+    public GameObject bloodprefab;
+
     public void AIStart()
     {
         player = GameObject.Find("Player");
@@ -214,6 +216,7 @@ public class GenericAIController: MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        Instantiate(bloodprefab, rb2D.position + new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)), Quaternion.identity);
         if (health <= 0)
             Destroy(gameObject);
     }

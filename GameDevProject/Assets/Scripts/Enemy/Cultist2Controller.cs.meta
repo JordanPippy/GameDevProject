@@ -3,7 +3,14 @@ guid: 55027d94e4fdc3c489214f215dd7a541
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spell: {instanceID: 0}
+  - player: {instanceID: 0}
+  - playerRB: {instanceID: 0}
+  - playerCol2D: {instanceID: 0}
+  - rb2D: {instanceID: 0}
+  - col2D: {instanceID: 0}
+  - bloodprefab: {fileID: 7287670526877647761, guid: 530a2a0eabd469943a1c68d9a907335c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
