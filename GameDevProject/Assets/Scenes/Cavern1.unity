@@ -295,6 +295,7 @@ MonoBehaviour:
   playerCol2D: {fileID: 0}
   rb2D: {fileID: 0}
   col2D: {fileID: 0}
+  bloodprefab: {fileID: 7287670526877647761, guid: 530a2a0eabd469943a1c68d9a907335c, type: 3}
 --- !u!1001 &165213961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29577,6 +29578,7 @@ MonoBehaviour:
   playerCol2D: {fileID: 0}
   rb2D: {fileID: 0}
   col2D: {fileID: 0}
+  bloodprefab: {fileID: 7287670526877647761, guid: 530a2a0eabd469943a1c68d9a907335c, type: 3}
 --- !u!1 &1220765765
 GameObject:
   m_ObjectHideFlags: 0
@@ -29749,6 +29751,7 @@ MonoBehaviour:
   playerCol2D: {fileID: 0}
   rb2D: {fileID: 0}
   col2D: {fileID: 0}
+  bloodprefab: {fileID: 7287670526877647761, guid: 530a2a0eabd469943a1c68d9a907335c, type: 3}
 --- !u!1001 &1227169443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94332,6 +94335,7 @@ MonoBehaviour:
   playerCol2D: {fileID: 0}
   rb2D: {fileID: 0}
   col2D: {fileID: 0}
+  bloodprefab: {fileID: 7287670526877647761, guid: 530a2a0eabd469943a1c68d9a907335c, type: 3}
   boss1: {fileID: 116731386}
   boss2: {fileID: 1220765765}
   boss3: {fileID: 1181939083}
