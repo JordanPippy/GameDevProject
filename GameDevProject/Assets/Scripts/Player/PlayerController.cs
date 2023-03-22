@@ -23,12 +23,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2D;
     private UIUpdater uiUpdater;
     private GameObject canvas;
+    private int swapBonus=0;
 
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.activeSceneChanged += ChangedActiveScene;
-        gameObject.GetComponent<AudioSource>().clip=cityMusic;
+        if(PlayerPrefs.GetInt("MusicIndictor")==1){
+            gameObject.GetComponent<AudioSource>().clip=cityMusic;
+        }
         gameObject.GetComponent<AudioSource>().Play();
         AbilityBase spellbase = spell.GetComponent<Ability>().ability;
         AbilityBase swapbase = mindSwap.GetComponent<Ability>().ability;
@@ -80,6 +82,18 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 movement = new Vector2(horizontal, vertical).normalized;
         rb2D.position += (movement * speed * Time.deltaTime);
+        // Music handling on player because I want it to be even more monolithic
+        if(SceneManager.GetActiveScene().buildIndex==2){
+            if(gameObject.GetComponent<AudioSource>().clip!=labMusic){
+                gameObject.GetComponent<AudioSource>().clip=labMusic;
+                gameObject.GetComponent<AudioSource>().Play();
+            }
+        }else if(SceneManager.GetActiveScene().buildIndex==3){
+            if(gameObject.GetComponent<AudioSource>().clip!=caveMusic){
+                gameObject.GetComponent<AudioSource>().clip=caveMusic;
+                gameObject.GetComponent<AudioSource>().Play();
+            }
+        }
     }
 
     private void CastAbility()
@@ -124,23 +138,13 @@ public class PlayerController : MonoBehaviour
                 uiUpdater.MindswapCooldown();
                 spellCooldown = spell.GetComponent<Ability>().ability.cooldown;
                 uiUpdater.SetAbilityCooldown(spellCooldown);
+                // Permanent health bonus from swapping
+                swapBonus+=2;
+                maxHealth+=swapBonus;
+                health+=swapBonus;
                 healthBar.SetMaxHealth(maxHealth);
                 healthBar.SetHealth(health);
             }
         }
-    }
-
-    // Music handling on player because I want it to be even more monolithic
-    private void ChangedActiveScene(Scene current, Scene next)
-    {
-        gameObject.GetComponent<AudioSource>().Stop();
-        if(next.buildIndex==1){
-            gameObject.GetComponent<AudioSource>().clip=cityMusic;
-        }else if(next.buildIndex==2){
-            gameObject.GetComponent<AudioSource>().clip=labMusic;
-        }else if(next.buildIndex==3){
-            gameObject.GetComponent<AudioSource>().clip=caveMusic;
-        }
-        gameObject.GetComponent<AudioSource>().Play();
     }
 }

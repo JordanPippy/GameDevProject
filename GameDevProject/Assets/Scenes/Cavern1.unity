@@ -94339,3 +94339,4 @@ MonoBehaviour:
   boss1: {fileID: 116731386}
   boss2: {fileID: 1220765765}
   boss3: {fileID: 1181939083}
+  orbitron: {fileID: 11400000, guid: 4c21b7ac83f6356459410bef3ac8416a, type: 2}
