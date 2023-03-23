@@ -65414,6 +65414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitTriggerToBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 4894167602778282197, guid: 6b9afd0bfc651ca47bd6613c7a3e4e3d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b9afd0bfc651ca47bd6613c7a3e4e3d, type: 3}
 --- !u!1001 &1237146358
